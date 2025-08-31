@@ -1,0 +1,84 @@
+{
+	"name": "hashavatar",
+	"version": "0.1.0",
+	"description": "Avatar generator for hashes and public keys",
+	"keywords": [
+		"web-crypto",
+		"noble crypto",
+		"hash",
+		"public key",
+		"visualizer",
+		"avatar"
+	],
+	"homepage": "https://hashavatar.js.org",
+	"bugs": {
+		"url": "https://github.com/defucc/hashavatar/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DeFUCC/hashavatar"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Davay42",
+		"email": "davay@defucc.me"
+	},
+	"type": "module",
+	"exports": "./lib/index.js",
+	"main": "./lib/index.js",
+	"module": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"files": [
+		"lib"
+	],
+	"packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
+	"scripts": {
+		"dev": "vitepress dev docs",
+		"build": "vitepress build docs",
+		"build-lib": "tsup",
+		"serve": "vitepress preview docs --port=5005",
+		"test": "vite docs/public/tests"
+	},
+	"dependencies": {
+		"@unocss/reset": "^66.0.0",
+		"@vueuse/core": "^13.0.0",
+		"png-chunk-text": "^1.0.0",
+		"png-chunks-encode": "^1.0.0",
+		"png-chunks-extract": "^1.0.0",
+		"vue": "^3.5.13"
+	},
+	"devDependencies": {
+		"@iconify-json/la": "^1.2.1",
+		"@unocss/extractor-pug": "^66.0.0",
+		"@vitejs/plugin-vue": "^5.2.3",
+		"@volar/vue-language-plugin-pug": "^1.6.5",
+		"pug": "^3.0.3",
+		"tsup": "^8.4.0",
+		"unocss": "^66.0.0",
+		"vitepress": "^2.0.0-alpha.3"
+	},
+	"tsup": {
+		"entry": [
+			"src/index.js"
+		],
+		"noExternal": [
+			"png-chunk-text",
+			"png-chunks-encode",
+			"png-chunks-extract"
+		],
+		"splitting": false,
+		"sourcemap": true,
+		"minify": true,
+		"clean": true,
+		"dts": true,
+		"outDir": "lib",
+		"format": [
+			"esm"
+		]
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	}
+}
